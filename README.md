@@ -156,8 +156,8 @@ Phase 8: Future computer vision development
 
 ## Contributors
 
+* David M. Mabula
 * Deogratius Nkelejiwa
-* Project Collaborator
 
 ---
 
