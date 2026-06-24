@@ -2,56 +2,27 @@
 
 ## Project Overview
 
-This repository documents the development of an autonomous Raspberry Pi based vehicle using DonkeyCar.
+This repository documents the development of an autonomous Raspberry Pi based vehicle using the DonkeyCar framework.
 
-The project was developed in collaboration with a colleague within an industrial project environment involving Chipglobe GmbH and Infineon technologies.
+The project was developed in collaboration with a colleague within an industrial project environment involving ChipGlobe GmbH and Infineon technologies.
 
-The objective was to design, train, and deploy an autonomous vehicle capable of lane following, remote operation, and future computer vision based navigation.
-
----
-
-## Objectives
-
-* Develop an autonomous driving platform using DonkeyCar
-* Train AI models for lane following
-* Enable multiple vehicle control methods
-* Investigate obstacle avoidance techniques
-* Build a foundation for future computer vision research
+The objective was to investigate autonomous driving, machine learning deployment, remote vehicle operation, and future computer vision based navigation using low-cost embedded hardware.
 
 ---
 
-## Hardware
+## Key Features
 
-* Raspberry Pi 4 Model B
-* Raspberry Pi Camera
-* PCA9685 PWM Controller
-* RC Servo
-* ESC
-* Xbox Controller
-* DonkeyCar Chassis
-
----
-
-## Software
-
-* DonkeyCar 5.x
-* Python
-* TensorFlow
-* Raspberry Pi OS
-* OpenCV (planned)
-* YOLO (future work)
-
----
-
-## System Architecture
-
-Pi Camera
-↓
-DonkeyCar AI Model
-↓
-PCA9685
-↓
-Steering + Throttle
+* Autonomous lane following
+* Raspberry Pi camera perception
+* PCA9685 steering and throttle control
+* Xbox controller integration
+* Bluetooth controller support
+* DonkeyCar Web Controller
+* DonkeyCar Mobile App
+* VPN-based remote operation architecture
+* Windows-based AI model training
+* Experimental obstacle avoidance evaluation
+* Future OpenCV and YOLO integration
 
 ---
 
@@ -59,7 +30,7 @@ Steering + Throttle
 
 ### Xbox Controller
 
-Primary control method used for:
+Primary interface used for:
 
 * Manual driving
 * Data collection
@@ -72,10 +43,11 @@ Successfully configured and tested.
 
 Capabilities:
 
-* Camera streaming
+* Live camera feed
 * Steering control
 * Throttle control
-* Recording control
+* Recording management
+* Autonomous mode selection
 
 ### DonkeyCar Mobile Application
 
@@ -89,21 +61,95 @@ Capabilities:
 
 ### Autonomous AI Control
 
-A trained neural network model was deployed to the Raspberry Pi and used for autonomous lane following.
+A trained neural network model was deployed to the Raspberry Pi and successfully demonstrated autonomous lane following.
 
 ---
 
-## Key Achievements
+## Hardware
 
-* Autonomous lane following
-* Xbox controller integration
-* Bluetooth controller support
-* DonkeyCar Web Controller integration
-* DonkeyCar Mobile App integration
-* VPN-based remote driving architecture
-* Windows-based AI training pipeline
-* PCA9685 drivetrain integration
-* Experimental obstacle avoidance evaluation
+* Raspberry Pi 4 Model B
+* Raspberry Pi Camera
+* PCA9685 PWM Controller
+* Steering Servo
+* ESC
+* Xbox Controller
+* RC Car Chassis
+
+Additional hardware details are available in:
+
+```text
+hardware/bill_of_materials.md
+```
+
+---
+
+## Software
+
+* DonkeyCar 5.x
+* Python
+* TensorFlow
+* Raspberry Pi OS
+* Git
+* OpenCV (Future Work)
+* YOLO (Future Work)
+
+---
+
+## Final System Architecture
+
+```text
+Pi Camera
+      ↓
+DonkeyCar AI Model
+      ↓
+PCA9685
+      ↓
+Steering + Throttle
+```
+
+---
+
+## Development Timeline
+
+### Phase 1
+
+Vehicle assembly and drivetrain calibration
+
+### Phase 2
+
+Xbox controller integration and manual driving
+
+### Phase 3
+
+Data collection and dataset generation
+
+### Phase 4
+
+TensorFlow model training on Windows
+
+### Phase 5
+
+Autonomous lane-following deployment
+
+### Phase 6
+
+DonkeyCar Web Controller integration
+
+### Phase 7
+
+DonkeyCar Mobile App integration
+
+### Phase 8
+
+VPN-based remote operation investigation
+
+### Phase 9
+
+VL53L0X obstacle avoidance evaluation
+
+### Phase 10
+
+Future OpenCV and YOLO development
 
 ---
 
@@ -111,35 +157,69 @@ A trained neural network model was deployed to the Raspberry Pi and used for aut
 
 ### VL53L0X Time-of-Flight Obstacle Avoidance
 
-A three-sensor obstacle avoidance system was designed and evaluated using VL53L0X ToF sensors and a TCA9548A I2C multiplexer.
+A three-sensor obstacle avoidance system was designed and evaluated using:
 
-The sensors successfully detected nearby objects and were integrated into the DonkeyCar control pipeline.
+* VL53L0X Time-of-Flight sensors
+* TCA9548A I2C multiplexer
+* Custom DonkeyCar integration
 
-However, testing revealed false-positive obstacle detections and interference with the autonomous lane-following model.
+Testing confirmed successful obstacle detection.
 
-Following evaluation, the ToF-based approach was removed from the active autonomous stack.
+However, the system introduced:
 
-Future work will focus on camera-based obstacle detection using OpenCV and YOLO.
+* False-positive detections
+* Unwanted steering corrections
+* Interference with lane-following behaviour
+
+Following evaluation, the ToF-based approach was removed from the active autonomous driving stack.
+
+Future obstacle avoidance work will focus on computer vision techniques.
 
 ---
 
-## Development Timeline
+## Documentation
 
-Phase 1: Manual driving using Xbox controller
+### Project Overview
 
-Phase 2: Data collection
+```text
+docs/project_overview.md
+```
 
-Phase 3: AI model training
+### System Architecture
 
-Phase 4: DonkeyCar Web Controller integration
+```text
+docs/project_architecture.md
+```
 
-Phase 5: DonkeyCar Mobile App integration
+### Setup Guide
 
-Phase 6: VPN-based remote control
+```text
+docs/setup_guide.md
+```
 
-Phase 7: Obstacle avoidance investigation
+### Training Pipeline
 
-Phase 8: Future computer vision development
+```text
+docs/training_pipeline.md
+```
+
+### Remote Control
+
+```text
+docs/remote_control.md
+```
+
+### Troubleshooting
+
+```text
+docs/troubleshooting.md
+```
+
+### Experimental ToF Research
+
+```text
+docs/experimental_tof_obstacle_avoidance.md
+```
 
 ---
 
@@ -147,20 +227,22 @@ Phase 8: Future computer vision development
 
 * OpenCV obstacle detection
 * YOLO object detection
+* Vision-based navigation
+* Dynamic path planning
 * Sensor fusion
 * Remote autonomous operation
-* Dynamic path planning
-* Safety layer development
 
 ---
 
 ## Contributors
 
-* David M. Mabula
 * Deogratius Nkelejiwa
+* Project Collaborator
 
 ---
 
 ## Acknowledgements
 
-This project was developed within an industrial project environment involving Chipglobe GmbH and Infineon technologies.
+This project was developed within an industrial project environment involving ChipGlobe GmbH and Infineon technologies.
+
+Special thanks to the DonkeyCar open-source community for providing the framework used throughout development.
