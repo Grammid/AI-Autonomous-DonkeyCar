@@ -194,7 +194,7 @@ docs/project_architecture.md
 ### Setup Guide
 
 ```text
-docs/setup_guide.md
+docs/setup.md
 ```
 
 ### Training Pipeline
